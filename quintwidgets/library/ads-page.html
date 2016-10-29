@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>The Quint</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no" />
+<meta name="description" content="">
+<meta name="author" content="">
+
+<!-- Font Awesome for Icon -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+<!-- Custom -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href='https://fonts.googleapis.com/css?family=Merriweather+Sans:400,800,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Merriweather:300' rel='stylesheet' type='text/css'>
+<!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<style>
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.story-new-wrap {
+   max-width: 500px;
+   margin: 0 auto;
+   background-color: #fff;
+}
+.collage-effects {}
+.collage-effects ul {margin: 0;padding: 0}
+.collage-effects ul li:nth-child(odd)  {}
+.collage-effects ul li:nth-child(even) {}
+
+.collage-effects ul li a              {display: block;height: 115px;}
+.collage-effects ul li a span         {margin:0 auto;position: absolute;text-align: center;top: 51%;transform: translateY(-50%);display: block;width: 100%;}
+
+.collage-effects ul li                {float:left;width: 33.33%;position: relative;
+   background-image: url("assets/images/quiz/ans01-01.jpg"); background-size: 100%;
+   -webkit-filter: grayscale(1); 
+   -webkit-filter: grayscale(100%); 
+   -moz-filter: grayscale(100%);
+   filter: gray; 
+   filter: grayscale(100%);
+   filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+   border: 2px #fff solid;
+}
+.collage-effects ul li:hover {
+   -webkit-filter: grayscale(0%); 
+   -webkit-filter: grayscale(0%); 
+   -moz-filter: grayscale(0%);
+   filter: none; 
+   filter: grayscale(0%);
+}
+.collage-effects ul li:nth-child(2)   {float:left;width: 33.33%;background-image: url("assets/images/quiz/ans01-03.jpg"); background-size: 100%}
+.collage-effects ul li:nth-child(3)   {float:left;width: 33.33%;background-image: url("assets/images/quiz/ans01-02.jpg"); background-size: 100%}
+
+.collage-effects ul li:nth-child(4)   {float:left;width: 50%;background-image: url("assets/images/quiz/ans02-02.jpg"); background-size: 100%}
+.collage-effects ul li:nth-child(5)   {float:left;width: 50%;background-image: url("assets/images/quiz/ans03-01.jpg"); background-size: 100%}
+
+.collage-effects ul li:nth-child(6)   {float:left;width: 33.33%;background-image: url("assets/images/quiz/ans03-02.jpg"); background-size: 100%}
+.collage-effects ul li:nth-child(7)   {float:left;width: 33.33%;background-image: url("assets/images/quiz/ans03-03.jpg"); background-size: 100%}
+.collage-effects ul li:nth-child(8)   {float:left;width: 33.33%;background-image: url("assets/images/quiz/ans02-01.jpg"); background-size: 100%}
+</style>
+</head>
+
+<body onload="adjust_iframe_height()">
+   <div class="story-new-wrap">
+      <div class="collage-effects">
+        <ul>
+            <li><a href="http://tq.staging.quinpress.com/others/2016/07/25/ad-testing-this-is-testing-for-internal-advertisement" target="_blank"></a></li>
+            <li><a href="http://tq.staging.quinpress.com/others/2016/07/25/ad-testing-this-is-testing-for-internal-advertisement" target="_blank"></a></li>
+            <li><a href="http://tq.staging.quinpress.com/others/2016/07/25/ad-testing-this-is-testing-for-internal-advertisement" target="_blank"></a></li>
+            <li><a href="http://tq.staging.quinpress.com/others/2016/07/25/ad-testing-this-is-testing-for-internal-advertisement" target="_blank"></a></li>
+            <li><a href="http://tq.staging.quinpress.com/others/2016/07/25/ad-testing-this-is-testing-for-internal-advertisement" target="_blank"></a></li>
+            <li><a href="http://tq.staging.quinpress.com/others/2016/07/25/ad-testing-this-is-testing-for-internal-advertisement" target="_blank"></a></li>
+            <li><a href="http://tq.staging.quinpress.com/others/2016/07/25/ad-testing-this-is-testing-for-internal-advertisement" target="_blank"></a></li>
+            <li><a href="http://tq.staging.quinpress.com/others/2016/07/25/ad-testing-this-is-testing-for-internal-advertisement" target="_blank"></a></li>
+        </ul>
+      </div>
+   </div>
+<!-- JS Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="http://fea.quintype.com/thequint/assets/iframeResizer.contentWindow.min_0bb6a81590ea182e4a7b799f4b6b4821.js"></script>
+<script>
+function adjust_iframe_height() {
+    var actual_height = document.body.scrollHeight;
+    console.log("height is", actual_height);
+    parent.postMessage(JSON.stringify({
+        'msg-type': "resize-iframe",
+        height: actual_height,
+        src: window.location.href
+    }), "*");
+}
+</script>
+</body>
+
+</html>
