@@ -1,2 +1,0 @@
-# thequint
-The Quint Repository
