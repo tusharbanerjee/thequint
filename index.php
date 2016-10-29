@@ -6,7 +6,7 @@
 </head>
 
 <body>
-Test New Content...
+<?php include_once("index.html"); ?>
 </body>
 
 </html>
