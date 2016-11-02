@@ -1,0 +1,29 @@
+.map h1,
+.map h1.fancy {
+  font-size: 1.3em;
+  line-height: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.toggles {
+  width: 320px;
+}
+
+.button.stroke:hover {
+  background-color: #3887be !important;
+  color: rgb(255, 255, 255) !important;
+}
+
+.button.stroke {
+  box-shadow: 0px 0px 0px 2px #223b53 inset !important;
+  color: white;
+}
