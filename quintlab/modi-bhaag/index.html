@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Modi Runner</title>
+  <link rel="stylesheet" href="kandi.css" type="text/css" media="screen">
+  <script type="text/javascript" src="jquery.2.1.1.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="sound sound-off"></div>
+    <div id="menu">
+      <div id="progress">
+        <div id="percent">Downloading: <span id="p"></span></div>
+        <progress id="progress-bar" value="0"></progress>
+      </div>
+      <div id="main">
+        <h1>Bhaag Modi: Kaala Dhan Edition</h1>
+        <h2>Help Modi Dodge all the Black Money</h2>
+        <ul>
+          <li><a href="javascript:void(0)" class="button play">Start Game</a></li>
+          <li><a href="javascript:void(0)" class="button credits">Credits</a></li>
+        </ul>
+      </div>
+      <div id="credits">
+        <ul>
+          <li class="artwork">Character design and art: <a href="http://www.acrylicana.com/">Mary Winkler</a></li>
+          <li class="artwork">Walk cycle animation: <a href="http://vimeo.com/hellostudios">Adam Everett Miller</a></li>
+          <li class="artwork">Platformer tiles: <a href="http://www.kenney.nl/">Kenney</a></li>
+        </ul>
+        <ul>
+          <li class="music">Game music: <a href="http://opengameart.org/content/jump-and-run-8-bit">bart</a></li>
+          <li class="music">Jump sound effect: <a href="http://opengameart.org/content/platformer-jumping-sounds">dklon</a></li>
+          <li class="music">Game over music: <a href="http://opengameart.org/content/lose-music-3">remaxim</a></li>
+        </ul>
+        <ul>
+          <li class="developer">Developer: <a href="http://blog.sklambert.com/">Steven Lambert</a></li>
+        </ul>
+        <a href="javascript:void(0)" class="button back">Back</a>
+      </div>
+    </div>
+    <canvas id="canvas" width="800" height="480">
+     <script language="JavaScript">
+        var elem = document.getElementById('myCanvas');
+         //elem.onClick = alert("hello world");  - displays alert without clicking
+        // elem.onClick = alert('hello world');  - displays alert without clicking
+        // elem.onClick = "alert('hello world!')";  - does nothing, even with clicking
+        // elem.onClick = function() { alert('hello world!'); };  - does nothing
+        // elem.onClick = function() { alert("hello world!"); };  - does nothing
+        var context = elem.getContext('2d');
+        context.fillStyle = '#05EFFF';
+        context.fillRect(0, 0, 150, 100);
+    </script>
+    
+    
+      <p>You're browser does not support the required functionality to play this game.</p>
+      <p>Please update to a modern browser such as <a href="www.google.com/chrome/‎">Google Chrome</a> to play.</p>
+    </canvas>
+    <div id="game-over">
+      <h2>You ran <span id="score"></span> meters!</h2>
+      <a href="javascript:void(0)" class="button restart">Try again?</a>
+    </div>
+  </div>
+  <script type="text/javascript" src="kandi.js"></script>
+  <script src="https://fea.quintype.com/thequint/assets/iframeResizer.contentWindow.min_0bb6a81590ea182e4a7b799f4b6b4821.js"></script>
+<!-- end iFrame -->
+ 
+<script>
+function adjust_iframe_height(){
+    var actual_height = document.body.scrollHeight;
+    console.log("height is",actual_height);
+    parent.postMessage(JSON.stringify({'msg-type':"resize-iframe", height:actual_height,src:window.location.href}),"*");
+    //* allows this to post to any parent iframe regardless of domain
+}
+</script>
+</body>
+</html>
