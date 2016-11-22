@@ -2,40 +2,63 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Modi Runner</title>
+  <title>Bhaag Modi Bhaag</title>
   <link rel="stylesheet" href="kandi.css" type="text/css" media="screen">
   <script type="text/javascript" src="jquery.2.1.1.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <script>
+    function absorbEvent_(event) {
+      var e = event || window.event;
+      e.preventDefault && e.preventDefault();
+      e.stopPropagation && e.stopPropagation();
+      e.cancelBubble = true;
+      e.returnValue = false;
+      return false;
+    }
+
+    function preventLongPressMenu(node) {
+      node.ontouchstart = absorbEvent_;
+      node.ontouchmove = absorbEvent_;
+      node.ontouchend = absorbEvent_;
+      node.ontouchcancel = absorbEvent_;
+    }
+
+    function init() {
+      preventLongPressMenu(document.getElementById('theimage'));
+    }
+  </script>
+  
 </head>
-<body>
+<body onLoad="init()">
+
   <div class="wrapper">
-    <div class="sound sound-off"></div>
+    <div class="sound sound-on"></div>
     <div id="menu">
       <div id="progress">
         <div id="percent">Downloading: <span id="p"></span></div>
         <progress id="progress-bar" value="0"></progress>
       </div>
       <div id="main">
-        <h1>Bhaag Modi: Kaala Dhan Edition</h1>
+        <h1>Bhaag Modi Bhaag: Kaala Dhan Edition</h1>
         <h2>Help Modi Dodge all the Black Money</h2>
-        <ul>
+        <p> Press "Spacebar" to Jump & Keep Holding 'Spacebar for longer Jumps </p>
+        <p2> Stay on the Grass  <img src="imgs/grass.png" > <img src="imgs/bridge.png"> <img src="imgs/boxCoin.png"></p2> 
+        <br>
+        <p2> Jump Over these <img src="imgs/spikes.png" width="50px"> <img src="imgs/spikes2.png" width="50px"></p2> 
+        <br>
+        <br>
+        <ul class="button-list">
           <li><a href="javascript:void(0)" class="button play">Start Game</a></li>
           <li><a href="javascript:void(0)" class="button credits">Credits</a></li>
         </ul>
       </div>
       <div id="credits">
         <ul>
-          <li class="artwork">Character design and art: <a href="http://www.acrylicana.com/">Mary Winkler</a></li>
-          <li class="artwork">Walk cycle animation: <a href="http://vimeo.com/hellostudios">Adam Everett Miller</a></li>
-          <li class="artwork">Platformer tiles: <a href="http://www.kenney.nl/">Kenney</a></li>
-        </ul>
-        <ul>
-          <li class="music">Game music: <a href="http://opengameart.org/content/jump-and-run-8-bit">bart</a></li>
-          <li class="music">Jump sound effect: <a href="http://opengameart.org/content/platformer-jumping-sounds">dklon</a></li>
-          <li class="music">Game over music: <a href="http://opengameart.org/content/lose-music-3">remaxim</a></li>
-        </ul>
-        <ul>
-          <li class="developer">Developer: <a href="http://blog.sklambert.com/">Steven Lambert</a></li>
+          <li class="music">Concept and Execution: Jaivardhan Singh Channey</li>
+          <li class="music">Illustration: Susnata Paul</li>
+          <li class="music">Graphics: Hardeep Singh</li>
+          <li class="music">Sound Effects: Badsha Ray</li>
+         
         </ul>
         <a href="javascript:void(0)" class="button back">Back</a>
       </div>
@@ -63,16 +86,6 @@
     </div>
   </div>
   <script type="text/javascript" src="kandi.js"></script>
-  <script src="https://fea.quintype.com/thequint/assets/iframeResizer.contentWindow.min_0bb6a81590ea182e4a7b799f4b6b4821.js"></script>
-<!-- end iFrame -->
- 
-<script>
-function adjust_iframe_height(){
-    var actual_height = document.body.scrollHeight;
-    console.log("height is",actual_height);
-    parent.postMessage(JSON.stringify({'msg-type':"resize-iframe", height:actual_height,src:window.location.href}),"*");
-    //* allows this to post to any parent iframe regardless of domain
-}
-</script>
+  
 </body>
 </html>

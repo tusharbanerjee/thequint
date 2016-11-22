@@ -66,7 +66,7 @@ var assetLoader = (function() {
     'bush2'         : 'imgs/bush2.png',
     'cliff'         : 'imgs/grassCliffRight.png',
     'spikes'        : 'imgs/spikes.png',
-	    'spikess'        : 'imgs/trial.gif',
+	    'spikess'        : 'imgs/spikes22.png',
     'box'           : 'imgs/boxCoin.png',
     'slime'         : 'imgs/slime.png'
   };
@@ -406,7 +406,7 @@ var player = (function(player) {
   player.update = function() {
 
     // jump if not currently jumping or falling
-    if ((mouseDown || touchDown) && player.dy === 0 && !player.isJumping) {
+    if ((touchDown || KEY_STATUS.space) && player.dy === 0 && !player.isJumping) {
       player.isJumping = true;
       player.dy = player.jumpDy;
       jumpCounter = 12;
@@ -414,7 +414,7 @@ var player = (function(player) {
     }
 
     // jump higher if the space bar is continually pressed
-    if ((mouseDown || touchDown) && jumpCounter) {
+    if ((touchDown || KEY_STATUS.space) && jumpCounter) {
       player.dy = player.jumpDy;
     }
 
@@ -683,28 +683,13 @@ function spawnEnvironmentSprites() {
       ));
     }
   }
-}
+} 
 
 
 /**
 *trial switch case for enemy spawn
 */
 
-function getRandom() {
-  var num = Math.floor(Math.random() * 3);
-
-  switch (num) {
-    case 0:
-      return 'spikes';
-
-    case 1:
-      return 'slime';
-
-    default:
-      return 'spikess';
-  }
-
-}
 
 
 
@@ -712,14 +697,15 @@ function getRandom() {
  * Spawn new enemy sprites off screen
  */
 function spawnEnemySprites() {
-  if (score > 100 && Math.random() > 0.96 && enemies.length < 1 && platformLength > 5 &&
+  var list = ['spikes', 'slime', 'spikess'];
+
+  if (score > 10 && Math.random() > 0.26 && enemies.length < 1 && platformLength > 5 &&
       (enemies.length ? canvas.width - enemies[enemies.length-1].x >= platformWidth * 3 ||
        canvas.width - enemies[enemies.length-1].x < platformWidth : true)) {
     enemies.push(new Sprite(
       canvas.width + platformWidth % player.speed,
-      platformBase - platformHeight * platformSpacer - platformWidth - 30,
-	  
-      Math.random() > 0.5 ? 'spikes' : 'slime' 
+      platformBase - platformHeight * platformSpacer - platformWidth - 30,  
+	list[rand(0, list.length-1)]
     ));  assetLoader.sounds.death.play();
 	
   }
@@ -781,6 +767,7 @@ var KEY_CODES = {
   32: 'space'
 };
 
+
 var mouseDown = 0;
 document.body.onmousedown = function() { 
   ++mouseDown;
@@ -789,6 +776,7 @@ document.body.onmouseup = function() {
   --mouseDown;
 }
 
+ 
 
 var touchDown = 0;
 document.body.ontouchstart = function() { 
@@ -797,6 +785,11 @@ document.body.ontouchstart = function() {
 document.body.ontouchend = function() {
   --touchDown;
 }
+
+
+var result = ['spikes', 'slime', 'stone'][Math.floor(Math.random() * 3)];
+
+
 
 var KEY_STATUS = {};
 for (var code in KEY_CODES) {
@@ -896,6 +889,7 @@ function gameOver() {
   assetLoader.sounds.bg.pause();
   assetLoader.sounds.gameOver.currentTime = 0;
   assetLoader.sounds.gameOver.play();
+  player.speed = 6;
 }
 
 /**
