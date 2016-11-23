@@ -700,7 +700,7 @@ function spawnEnvironmentSprites() {
 function spawnEnemySprites() {
   var list = ['spikes', 'slime', 'spikess', 'stone'];
 
-  if (score > 10 && Math.random() > 0.56 && enemies.length < 1 && platformLength > 5 &&
+  if (score > 10 && Math.random() > 0.76 && enemies.length < 1 && platformLength > 5 &&
       (enemies.length ? canvas.width - enemies[enemies.length-1].x >= platformWidth * 3 ||
        canvas.width - enemies[enemies.length-1].x < platformWidth : true)) {
     enemies.push(new Sprite(
@@ -909,14 +909,14 @@ $('.back').click(function() {
 $('.sound').click(function() {
   var $this = $(this);
   // sound off
-  if ($this.hasClass('sound-on')) {
-    $this.removeClass('sound-on').addClass('sound-off');
-    playSound = false;
+  if ($this.hasClass('sound-off')) {
+    $this.removeClass('sound-off').addClass('sound-on');
+    playSound = true;
   }
   // sound on
   else {
-    $this.removeClass('sound-off').addClass('sound-on');
-    playSound = true;
+    $this.removeClass('sound-on').addClass('sound-off');
+    playSound = false;
   }
   
  
