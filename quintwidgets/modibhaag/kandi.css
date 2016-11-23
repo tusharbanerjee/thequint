@@ -46,7 +46,7 @@ li {
 a {
   text-decoration: none;
   color: inherit;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: none;
 }
 
 .wrapper {
@@ -63,7 +63,7 @@ p
 	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
 	font-weight:500;
 	font-size:20px;
-	color:#fff;
+	color:#000;
 	
 }
 
@@ -72,7 +72,7 @@ p2
 	font-family:"Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
 	font-weight:400;
 	font-size:20px;
-	color:#fff;
+	color:#000;
 	
 }
 
@@ -86,10 +86,26 @@ p2
   background-color: grey;
 }
 #menu.main {
-	background-image:url('http://365psd.com/images/previews/e55/5-blurred-backgrounds-image-2012Part-1-Background-5-without-Glare.jpg');
+	background-image:url('imgs/credits.jpg');
+	background-size:cover;
+  background-position:bottom;
+  position:absolute;
+  background-repeat:no-repeat;
+  bottom:0;
+  left:0;
+  width:100%;
 }
 #menu.credits {
-  background-image: url('imgs/credits-bg.png');
+  background-image: url('imgs/credits.jpg');
+  background-size:cover;
+  background-position:bottom;
+  position:absolute;
+  background-repeat:no-repeat;
+  bottom:0;
+  left:0;
+  width:100%;
+
+
 }
 
 #progress {
@@ -135,8 +151,8 @@ p2
   top: 0; left: 0; bottom: 0; right: 0;
 }
 #main h1 {
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  color: black;
+  text-shadow: none;;
 }
 .button-list {
 	text-align:center
@@ -150,12 +166,12 @@ p2
   display: inline-block;
   width: 150px;
   margin: 0 auto;
-  height: 30px;
-  line-height: 30px;
-  border: 1px solid #AA2666;
+  height: 50px;
+  line-height: 50px;
+  border: none;
   color: white;
-  font-weight: bold;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight: 300;
+  text-shadow: none;
   background-color: #ff8504;
   
   border-radius: 5px;
@@ -177,14 +193,14 @@ p2
 }
 
 .artwork, .music, .developer {
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  text-shadow: none;
 }
 
 .artwork {
-  color: #fa8526;
+  color: #000;
 }
 .music {
-  color: #e6e71f;
+  color: #000;
 }
 .developer {
   color: #13eb8a;

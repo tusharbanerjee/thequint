@@ -68,6 +68,7 @@ var assetLoader = (function() {
     'spikes'        : 'imgs/spikes.png',
 	    'spikess'        : 'imgs/spikes22.png',
     'box'           : 'imgs/boxCoin.png',
+	'stone'           : 'imgs/spikes2s.png',
     'slime'         : 'imgs/slime.png'
   };
 
@@ -697,9 +698,9 @@ function spawnEnvironmentSprites() {
  * Spawn new enemy sprites off screen
  */
 function spawnEnemySprites() {
-  var list = ['spikes', 'slime', 'spikess'];
+  var list = ['spikes', 'slime', 'spikess', 'stone'];
 
-  if (score > 10 && Math.random() > 0.26 && enemies.length < 1 && platformLength > 5 &&
+  if (score > 10 && Math.random() > 0.56 && enemies.length < 1 && platformLength > 5 &&
       (enemies.length ? canvas.width - enemies[enemies.length-1].x >= platformWidth * 3 ||
        canvas.width - enemies[enemies.length-1].x < platformWidth : true)) {
     enemies.push(new Sprite(
