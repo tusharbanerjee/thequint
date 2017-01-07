@@ -130,6 +130,7 @@ header h1 {
   -webkit-animation: cd-bounce-in 0.7s;
   -moz-animation: cd-bounce-in 0.7s;
   animation: cd-bounce-in 0.7s;
+                border-right: 2px solid #fff;
 }
 
 @-webkit-keyframes cd-bounce-in {
