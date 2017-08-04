@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="assets/css/style.css"> <!-- Resource style -->
+	<script src="assets/js/modernizr.js"></script> <!-- Modernizr -->
+  	
+	<title>Before and After</title>
+</head>
+<body onload="adjust_iframe_height()">
+	<figure class="cd-image-container">
+		<img src="data/1-after.jpg" alt="Original Image">
+		<span class="cd-image-label" data-type="original"></span>
+
+		<div class="cd-resize-img"> <!-- the resizable image on top -->
+			<img src="data/1-before.jpg" alt="Modified Image">
+			<span class="cd-image-label" data-type="modified"></span>
+		</div>
+
+		<span class="cd-handle"></span>
+	</figure> <!-- cd-image-container -->
+<script src="assets/js/jquery-2.1.1.js"></script>
+<script src="assets/js/jquery.mobile.custom.min.js"></script> <!-- Resource jQuery -->
+<script src="assets/js/main.js"></script> <!-- Resource jQuery -->
+
+<script src="https://fea.quintype.com/thequint/assets/iframeResizer.contentWindow.min_0bb6a81590ea182e4a7b799f4b6b4821.js"></script> 
+<script>
+function adjust_iframe_height(){
+    var actual_height = document.body.scrollHeight; 
+    console.log("height is",actual_height);
+    parent.postMessage(JSON.stringify({'msg-type':"resize-iframe", height:actual_height,src:window.location.href}),"*"); 
+}
+</script>
+</body>
+</html>
